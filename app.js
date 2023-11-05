@@ -1,8 +1,10 @@
 const express = require('express');
 const { Pool } = require('pg');
-const connectionString = 'postgres://ljnbpins:bhGJQuvJVjNFaTwtmVYQuzvsvuIIM2Yc@isabelle.db.elephantsql.com/ljnbpins';
+require(`dotenv`).config();
+
+//const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
-    connectionString: connectionString
+    connectionString: process.env.DATABASE_URL
 });
 const app = express();
 const port = 3000;
